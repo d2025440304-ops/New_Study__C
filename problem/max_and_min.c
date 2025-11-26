@@ -102,6 +102,8 @@
 
 //在c语言中，函数无法返回两个返回值，但可以利用指针，传址调用改变想改变的值
 #define N 10
+//测试是否能双推
+
 int  find_max_min(int arr[],int *p)
 {
     int max = arr[0];
