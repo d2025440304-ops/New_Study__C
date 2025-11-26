@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/dai/Documents/Code/New_Study_C/Study_C/problem/output/gcd'
+relocations:     []
+...
