@@ -17,7 +17,7 @@
 //     int r = gcd(x,y);
 //     printf("%d\n",r);
 // }
-
+#include <stdio.h>
 int gcd (int x,int y )
 {   
     while(y)
