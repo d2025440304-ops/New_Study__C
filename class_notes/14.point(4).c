@@ -7,6 +7,7 @@
 
 //使用回调函数改造前
 //#include <stdio.h>
+//以下是回调函数
 //int add(int a, int b)
 //{
 //    return a + b;
@@ -25,6 +26,9 @@
 //}
 //
 //
+
+
+//当一个函数的参数是一个函数指针时，通常用这个函数的参数函数指针来回调多个同类型的函数
 //void calc(int(*pf)(int, int))
 //{
 //    int x, y;
@@ -364,9 +368,3 @@ void print_arr(int arr[],int sz)
 //	return 0;
 //}
 //
-
-
-
-
-
-

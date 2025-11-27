@@ -28,7 +28,11 @@ int  cmp_int(const void *e1,const void *e2)
 //按名字升序
 int cmp_stu_name(const void *p1,const void *p2)
 {
-    return strcmp(((const Students*)p1)->name,((const Students*)p2)->name);
+    //将指针写的清楚好看，重新赋给另一个指针；
+    const Students *s1 = (const Students *)p1;
+    const Students *s2 = (const Students *)p2;
+    return strcmp(s1->name,s2->name);
+    //return strcmp(((const Students*)p1)->name,((const Students*)p2)->name);
 }
 
 //按年龄降序
