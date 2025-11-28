@@ -280,29 +280,29 @@
 
 //先复习左旋字符串
 //字符串逆序函数
-// int leftround(char *str,char * str1)
-// {
-//     int len = strlen(str);
-//     //通过循环法来判断是否是经过旋转的字符串，最多循环len次，每次都判断是否相等，用strcmp函数判断
-//     //循环法思路；i是次数，循环len次，下标是j，假设旋转len次，第一次，旋转一个，把第一个拿出来，放进tmp里
-//     //后面的转移到前面去，然后最后一个空下来，把tmp赋给最后一个
-//     int i = 0;
-//     int j = 0;
-//     for(int i = 0;i<len;i++)
-//     {
-//         int tmp = str[j];
-//         for(int j = 0;j<len-1;j++)
-//         {
-//             str[j] = str[j+1];
-//         }
-//         str[len-1] = tmp;
-//         if(strcmp(str,str1) == 0)
-//         {
-//             return 1;
-//         }
-//     }
-//     return 0;
-// }
+int findleftround(char *str,char * str1)
+{
+    int len = strlen(str);
+    //通过循环法来判断是否是经过旋转的字符串，最多循环len次，每次都判断是否相等，用strcmp函数判断
+    //循环法思路；i是次数，循环len次，下标是j，假设旋转len次，第一次，旋转一个，把第一个拿出来，放进tmp里
+    //后面的转移到前面去，然后最后一个空下来，把tmp赋给最后一个
+    int i = 0;
+    int j = 0;
+    for(int i = 0;i<len;i++)
+    {
+        int tmp = str[j];
+        for(int j = 0;j<len-1;j++)
+        {
+            str[j] = str[j+1];
+        }
+        str[len-1] = tmp;
+        if(strcmp(str,str1) == 0)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
 //法二，库函数法
 // int  findleftround(char *str,char *str1)
 // {
@@ -312,15 +312,15 @@
 //     strcat(arr,str);
 //     return (strstr(arr, str1) != NULL) ? 1 : 0;//三目操作符
 // }
-// int main()
-// {
-//     char str[] = "abcdef";
-//     char * str1 = "bcdefa";
-//     int r =  findleftround(str,str1);
-//     if(r == 1) printf("是经过旋转的字符串\n");
-//     else printf("不是经过旋转的字符串\n");
-//     return 0;
-// }
+int main()
+{
+    char str[] = "abcdef";
+    char * str1 = "bcdefa";
+    int r =  findleftround(str,str1);
+    if(r == 1) printf("是经过旋转的字符串\n");
+    else printf("不是经过旋转的字符串\n");
+    return 0;
+}
 
 //在一个从左向右从上往下都是升序的二维数组里寻找一个数，并判断是否存在
 //时间复杂度低于on
@@ -437,45 +437,45 @@
 //单身狗二，在一组数中找到两个不相同的数
 //将数组整体异或，得到一个结果，然后找到这个结果二进制第k位为1的，按照第k位是否为1来分成两组，再次异或存到指针中
 
-void Fun_num(int arr[],int n ,int *pum1,int *pum2)
-{
-    //首先找到异或的结果num，异或时直接用一个为0的变量异或等
-    int num = 0;
-    for(int i = 0;i<n;i++)
-    {
-        num ^=arr[i];
-    }
-    //用num右移再按位与1的方法找到第k位为1的k
-    int k = 0;
-    for(int i = 0;i<32;i++)
-    {
-        //任何数按位与1都只能得到1或者0.所以可以判断某位是否为1
-        if(((num>>i) & 1) != 0)
-        {
-            k = i;
-            break;
-        }
-    }
-    //找到k了，现在要分组   
-    *pum1 = *pum2 = 0;
-    for(int i = 0;i<n;i++)
-    {
-        if(((arr[i]>>k) & 1) != 0)
-        {
-            *pum1 ^= arr[i];
-        }
-        else
-        {
-            *pum2 ^= arr[i];
-        }
-    }
-}
-int main()
-{
-    int arr [] = {1,2,3,4,5,1,2,3,4,6};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    int a = 0, b = 0;
-    Fun_num(arr,n,&a,&b);
-    printf("%d %d",a,b);
-    return 0;
-}
+// void Fun_num(int arr[],int n ,int *pum1,int *pum2)
+// {
+//     //首先找到异或的结果num，异或时直接用一个为0的变量异或等
+//     int num = 0;
+//     for(int i = 0;i<n;i++)
+//     {
+//         num ^=arr[i];
+//     }
+//     //用num右移再按位与1的方法找到第k位为1的k
+//     int k = 0;
+//     for(int i = 0;i<32;i++)
+//     {
+//         //任何数按位与1都只能得到1或者0.所以可以判断某位是否为1
+//         if(((num>>i) & 1) != 0)
+//         {
+//             k = i;
+//             break;
+//         }
+//     }
+//     //找到k了，现在要分组   
+//     *pum1 = *pum2 = 0;
+//     for(int i = 0;i<n;i++)
+//     {
+//         if(((arr[i]>>k) & 1) != 0)
+//         {
+//             *pum1 ^= arr[i];
+//         }
+//         else
+//         {
+//             *pum2 ^= arr[i];
+//         }
+//     }
+// }
+// int main()
+// {
+//     int arr [] = {1,2,3,4,5,1,2,3,4,6};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     int a = 0, b = 0;
+//     Fun_num(arr,n,&a,&b);
+//     printf("%d %d",a,b);
+//     return 0;
+// }
