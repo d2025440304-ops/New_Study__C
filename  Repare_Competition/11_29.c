@@ -96,20 +96,3 @@
 //     }
 //     return 0;
 // }
-
-
-
-#include <stdio.h>
-#include <string.h>
-
-int main() 
-{
-    char result[50];
-    char* nickname = "Daiyu";
-    char* suffix = "'kind'";
-    result[0] = '\0';
-    strcat(result, nickname);
-    strcat(result, suffix);
-    printf("%s\n", result);    
-    return 0;
-}
