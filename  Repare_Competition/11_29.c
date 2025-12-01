@@ -96,3 +96,46 @@
 //     }
 //     return 0;
 // }
+
+
+
+//Reveiew
+#include <stdio.h>
+typedef long long LL;
+void zeros_end(LL a[],int n)
+{
+    //定义一个慢指针，用来找可以放置的整数，destination；目的地
+    //转换思路，将非 0 全部放到前面，从第一个开始放，后面放 0，也是把所有 0 放到后面的方式
+    int dest = 0;
+    for(int src = 0;src<n;src++)
+    {
+        if(a[src] != 0)
+        {
+            a[dest] = a[src];
+            dest++;
+        }
+    }
+    while(dest<n)
+    {
+        a[dest] = 0;
+        dest++;
+    }
+}
+int main()
+{
+    int n = 0;
+    if(scanf("%d",n) != 1) return 1;
+
+    LL a[20000] ={0};
+    for(int i = 0;i<n;i++)
+    {
+        if(scanf("%lld",a[i]) != 1) return 1;
+    }
+    zeros_end(a,n);
+    
+    for(int i = 0;i<n;i++)
+    {
+        scanf("%lld",a[i]);
+    }
+    return 0;
+}
