@@ -53,48 +53,48 @@
 // }
 
 //Reveiw
-// #include <stdio.h>
-// void print_in_base2(int m ,int p)
-// {
-//     // 递归结束的条件
-//     if(m==0) return;
+#include <stdio.h>
+void print_in_base2(int m ,int p)
+{
+    // 递归结束的条件
+    if(m==0) return;
     
-//     // 递归先打印商数，再打印余数，所以可以递归从后往前
-//     // 只会递归两次，最后一次打印余数
-//     print_in_base2(m/p,p);
+    // 递归先打印商数，再打印余数，所以可以递归从后往前
+    // 只会递归两次，最后一次打印余数
+    print_in_base2(m/p,p);
     
-//     int k = m%p;
-//     if(k<10) printf("%d",k);
-//     else printf("%c",'A'+(k-10));
+    int k = m%p;
+    if(k<10) printf("%d",k);
+    else printf("%c",'A'+(k-10));
 
-// }
-// int main()
-// {
-//     // 输入 p 进制
-//     int P = 0;
-//     scanf("%d",&P);
+}
+int main()
+{
+    // 输入 p 进制
+    int P = 0;
+    scanf("%d",&P);
 
-//     // 打印乘法表
-//     for(int i = 1;i<P;i++)
-//     {
-//         for(int j = 1;j<=i;j++)
-//         {
-//             if(i<10) printf("%d",i);
-//             else printf("%c",'A'+i-10);
+    // 打印乘法表
+    for(int i = 1;i<P;i++)
+    {
+        for(int j = 1;j<=i;j++)
+        {
+            if(i<10) printf("%d",i);
+            else printf("%c",'A'+i-10);
 
-//             printf("*");
+            printf("*");
 
-//             if(j<10) printf("%d",j);
-//             else printf("%c",'A'+j-10);
+            if(j<10) printf("%d",j);
+            else printf("%c",'A'+j-10);
 
-//             printf("=");
+            printf("=");
 
-//             int m = i*j;
-//             print_in_base2(m,P);
+            int m = i*j;
+            print_in_base2(m,P);
 
-//             printf(" ");
-//         }
-//         printf("\n");
-//     }
-//     return 0;
-// }
+            printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
