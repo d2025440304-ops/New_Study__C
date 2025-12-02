@@ -41,16 +41,16 @@
 
 
 
-//#include <stdio.h>
-//
-//int main()
-//{
+// #include <stdio.h>
+
+// int main()
+// {
 //    char* a[] = { "work","at","alibaba" };
 //    char** pa = a;
-//    pa++;
+//    pa++;//字符指针指向整个字符，存的是首字符的地址
 //    printf("%s\n", *pa);
 //    return 0;
-//}
+// }
 
 
 
@@ -222,36 +222,36 @@
 //	return 0;
 //}
 
-#include <string.h>
+// #include <string.h>
 
-//strcat 函数用来连接字符串
-//函数返回的是目标空间的起始地址
+// //strcat 函数用来连接字符串
+// //函数返回的是目标空间的起始地址
 
-char* my_strcat(char* dest, const char* src)
-{
-	assert(dest && src);
-	char* ret = dest;
-	//1. 找打目标空间的\0
-	while (*dest != '\0')
-		dest++;
-	//2. 拷贝
-	while (*dest++ = *src++)
-		;//空语句
-	return ret;
-}
+// char* my_strcat(char* dest, const char* src)
+// {
+// 	assert(dest && src);
+// 	char* ret = dest;
+// 	//1. 找打目标空间的\0
+// 	while (*dest != '\0')
+// 		dest++;
+// 	//2. 拷贝
+// 	while (*dest++ = *src++)
+// 		;//空语句
+// 	return ret;
+// }
 
-int main()
-{
-	char arr1[20] = "hello ";//hello world
-	char arr2[] = "world";
+// int main()
+// {
+// 	char arr1[20] = "hello ";//hello world
+// 	char arr2[] = "world";
 
-	char*s = my_strcat(arr1, arr2);
-	printf("%s\n", arr1);
-	printf("%s\n", s);
-	//printf("%s\n", my_strcat(arr1, arr2));
+// 	char*s = my_strcat(arr1, arr2);
+// 	printf("%s\n", arr1);
+// 	printf("%s\n", s);
+// 	//printf("%s\n", my_strcat(arr1, arr2));
 
-	return 0;
-}
+// 	return 0;
+// }
 
 
 

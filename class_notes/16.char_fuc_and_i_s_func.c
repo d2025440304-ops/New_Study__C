@@ -247,29 +247,29 @@
 //}
 
 //
-//int main()
-//{
-//	char arr[] = "zpengwei@yeah.net@hehe";
-//	char arr2[30] = { 0 };//"zpengwei\0yeah\0net"
-//	strcpy(arr2, arr);
-//	const char* sep = "@.";
-//	char* ret = NULL;
-//	for (ret = strtok(arr2, sep); ret != NULL; ret=strtok(NULL, sep))
-//	{
-//		printf("%s\n", ret);
-//	}
-//	
-//	//ret = strtok(arr2, sep);
-//	//printf("%s\n", ret);
-//
-//	//ret = strtok(NULL, sep);
-//	//printf("%s\n", ret);
-//
-//	//ret = strtok(NULL, sep);
-//	//printf("%s\n", ret);
-//
-//	return 0;
-//}
+// int main()
+// {
+// 	char arr[] = "zpengwei@yeah.net@hehe";
+// 	char arr2[30] = { 0 };//"zpengwei\0yeah\0net"
+// 	strcpy(arr2, arr);
+// 	const char* sep = "@.";
+// 	char* ret = NULL;
+// 	for (ret = strtok(arr2, sep); ret != NULL; ret=strtok(NULL, sep))
+// 	{
+// 		printf("%s\n", ret);
+// 	}
+	
+// 	//ret = strtok(arr2, sep);
+// 	//printf("%s\n", ret);
+
+// 	//ret = strtok(NULL, sep);
+// 	//printf("%s\n", ret);
+
+// 	//ret = strtok(NULL, sep);
+// 	//printf("%s\n", ret);
+
+// 	return 0;
+// }
 //
 
 //int main()
