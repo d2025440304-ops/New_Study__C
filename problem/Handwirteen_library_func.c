@@ -74,7 +74,6 @@
 
 
 //模拟 strcat 的实现
-//模拟 strcpy 函数
 
 // char * my_strcat(char *p1,const char *p2)
 // {
@@ -100,41 +99,42 @@
 // }
 
 //模拟 strstr 的实现，strstr 函数，在前面的字符好中找到第一次出现与后面的字符串相同的字符串，找到后返回第一次出现相同字符串的地址，直到遇到\0
-char * my_strstr(const char *str1,const char *str2)
-{
-    const char *s1 = NULL;
-    const char *s2 = NULL;
-    const char *cur = str1;
+// char * my_strstr(const char *str1,const char *str2)
+// {
+//     const char *s1 = NULL;
+//     const char *s2 = NULL;
+//     const char *cur = str1;
     
-    if(*str2 == 0)
-    return (char *)str1;//空字符串是任何字符串的子串
+//     if(*str2 == 0)
+//     return (char *)str1;//空字符串是任何字符串的子串
 
-    while(*cur)
-    {
-        s1 = cur;
-        s2 = str2;
-        while(*s1 && *s2 && *s1 == *s2)
-        {
-            s1++;
-            s2++;
-        }
-        //直到把str2找完
-        if(*s2 == 0)
-        {
-            return (char *)cur;
-        } 
-        cur++;
-    }
-    return NULL;
+//     while(*cur)
+//     {
+//         s1 = cur;
+//         s2 = str2;
+//         while(*s1 && *s2 && *s1 == *s2)
+//         {
+//             s1++;
+//             s2++;
+//         }
+//         //直到把str2找完
+//         if(*s2 == 0)
+//         {
+//             return (char *)cur;
+//         } 
+//         cur++;
+//     }
+//     return NULL;
 
-}
-int main()
-{
-    char arr1[] = "abbcde";
-    char arr2[] = "bcd";
-    char *ret = my_strstr(arr1,arr2);
-    // if(ret != NULL)
-    // printf("%.*s",(int)strlen(arr2),ret);//.表示精度，*表示又参数动态宽度，s 是字符串起始指针
-    printf("%s\n",ret);
-    return 0;
-}
+// }
+// int main()
+// {
+//     char arr1[] = "abbcde";
+//     char arr2[] = "bcd";
+//     char *ret = my_strstr(arr1,arr2);
+//     // if(ret != NULL)
+//     // printf("%.*s",(int)strlen(arr2),ret);//.表示精度，*表示又参数动态宽度，s 是字符串起始指针
+//     printf("%s\n",ret);
+//     return 0;
+// }
+
