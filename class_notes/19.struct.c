@@ -274,7 +274,7 @@
 //	return *(char*)&n;
 //}
 
-
+//联合体
 int check_sys()
 {
 	union Un
