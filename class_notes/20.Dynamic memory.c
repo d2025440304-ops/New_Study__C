@@ -513,57 +513,57 @@
 
 
 
-//struct S
-//{
-//	char c;
-//	int n;
-//	int arr[];//柔性数组
-//};
+struct S
+{
+	char c;
+	int n;
+	int arr[];//柔性数组
+};
 
 
-//struct S
-//{
-//	char c;
-//	int n;
-//	int arr[0];//柔性数组
-//};
+struct S
+{
+	char c;
+	int n;
+	int arr[0];//柔性数组
+};
 
-//
-//struct S
-//{
-//	int n;//4
-//	int arr[];//
-//};
-//
-//int main()
-//{
-//	//printf("%zd\n", sizeof(struct S));
-//	struct S* ps = (struct S*)malloc(sizeof(struct S) + 5*sizeof(int));
-//	if (ps == NULL)
-//	{
-//		perror("malloc");
-//		return 1;
-//	}
-//	ps->n = 100;
-//	int i = 0;
-//	for (i = 0; i < 5; i++)
-//	{
-//		ps->arr[i] = i;
-//	}
-//	//调整空间
-//	struct S* ptr = (struct S*)realloc(ps, sizeof(struct S)+10*sizeof(int));
-//	if (ptr != NULL)
-//	{
-//		ps = ptr;
-//	}
-//	//....
-//
-//	//释放
-//	free(ps);
-//	ps = NULL;
-//
-//	return 0;
-//}
+
+struct S
+{
+	int n;//4
+	int arr[];//
+};
+
+int main()
+{
+	//printf("%zd\n", sizeof(struct S));
+	struct S* ps = (struct S*)malloc(sizeof(struct S) + 5*sizeof(int));
+	if (ps == NULL)
+	{
+		perror("malloc");
+		return 1;
+	}
+	ps->n = 100;
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		ps->arr[i] = i;
+	}
+	//调整空间
+	struct S* ptr = (struct S*)realloc(ps, sizeof(struct S)+10*sizeof(int));
+	if (ptr != NULL)
+	{
+		ps = ptr;
+	}
+	//....
+
+	//释放
+	free(ps);
+	ps = NULL;
+
+	return 0;
+}
 
 struct S
 {

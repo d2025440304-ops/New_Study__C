@@ -275,23 +275,23 @@
 //}
 
 //联合体
-int check_sys()
-{
-	union Un
-	{
-		char c;
-		int i;
-	}u;
-	u.i = 1;
-	return u.c;//小端：返回1，大端：返回0
-}
+// int check_sys()
+// {
+// 	union Un
+// 	{
+// 		char c;
+// 		int i;
+// 	}u;
+// 	u.i = 1;
+// 	return u.c;//小端：返回1，大端：返回0
+// }
 
-int main()
-{
-	int ret = check_sys();//小端：返回1，大端：返回0
-	if (ret == 1)
-		printf("小端\n");
-	else
-		printf("大端\n");
-	return 0;
-}
+// int main()
+// {
+// 	int ret = check_sys();//小端：返回1，大端：返回0
+// 	if (ret == 1)
+// 		printf("小端\n");
+// 	else
+// 		printf("大端\n");
+// 	return 0;
+// }
