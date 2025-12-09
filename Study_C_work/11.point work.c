@@ -280,42 +280,42 @@
 
 //先复习左旋字符串
 //字符串逆序函数
-int findleftround(char *str,char * str1)
-{
-    int len = strlen(str);
-    //通过循环法来判断是否是经过旋转的字符串，最多循环len次，每次都判断是否相等，用strcmp函数判断
-    //循环法思路；i是次数，循环len次，下标是j，假设旋转len次，第一次，旋转一个，把第一个拿出来，放进tmp里
-    //后面的转移到前面去，然后最后一个空下来，把tmp赋给最后一个
-    int i = 0;
-    int j = 0;
-    for(int i = 0;i<len;i++)
-    {
-        int tmp = str[j];
-        for(int j = 0;j<len-1;j++)
-        {
-            str[j] = str[j+1];
-        }
-        str[len-1] = tmp;
-        if(strcmp(str,str1) == 0)
-        {
-            return 1;
-        }
-    }
-    return 0;
-}
-//法二，库函数法
-// int  findleftround(char *str,char *str1)
+// int findleftround(char *str,char * str1)
 // {
-//     //思路,要比较的字符串复制一次，这样就包含所有旋转的情况之后的样子，再用strstr函数，寻找字符串
-//     char arr[200] = {0};
-//     strcpy(arr,str);
-//     strcat(arr,str);
-//     return (strstr(arr, str1) != NULL) ? 1 : 0;//三目操作符
+//     int len = strlen(str);
+//     //通过循环法来判断是否是经过旋转的字符串，最多循环len次，每次都判断是否相等，用strcmp函数判断
+//     //循环法思路；i是次数，循环len次，下标是j，假设旋转len次，第一次，旋转一个，把第一个拿出来，放进tmp里
+//     //后面的转移到前面去，然后最后一个空下来，把tmp赋给最后一个
+//     int i = 0;
+//     int j = 0;
+//     for(int i = 0;i<len;i++)
+//     {
+//         int tmp = str[j];
+//         for(int j = 0;j<len-1;j++)
+//         {
+//             str[j] = str[j+1];
+//         }
+//         str[len-1] = tmp;
+//         if(strcmp(str,str1) == 0)
+//         {
+//             return 1;
+//         }
+//     }
+//     return 0;
 // }
+//法二，库函数法
+int  findleftround(char *str,char *str1)
+{
+    //思路,要比较的字符串复制一次，这样就包含所有旋转的情况之后的样子，再用strstr函数，寻找字符串
+    char arr[200] = {0};
+    strcpy(arr,str);
+    strcat(arr,str);
+    return (strstr(arr, str1) != NULL) ? 1 : 0;//三目操作符
+}
 int main()
 {
     char str[] = "abcdef";
-    char * str1 = "bcdefa";
+    char * str1 = "cdefa";
     int r =  findleftround(str,str1);
     if(r == 1) printf("是经过旋转的字符串\n");
     else printf("不是经过旋转的字符串\n");
