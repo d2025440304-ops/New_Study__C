@@ -440,11 +440,13 @@ int main()
 // void Fun_num(int arr[],int n ,int *pum1,int *pum2)
 // {
 //     //首先找到异或的结果num，异或时直接用一个为0的变量异或等
+
 //     int num = 0;
 //     for(int i = 0;i<n;i++)
 //     {
 //         num ^=arr[i];
 //     }
+
 //     //用num右移再按位与1的方法找到第k位为1的k
 //     int k = 0;
 //     for(int i = 0;i<32;i++)
@@ -456,20 +458,22 @@ int main()
 //             break;
 //         }
 //     }
+
 //     //找到k了，现在要分组   
 //     *pum1 = *pum2 = 0;
 //     for(int i = 0;i<n;i++)
 //     {
 //         if(((arr[i]>>k) & 1) != 0)
 //         {
-//             *pum1 ^= arr[i];
+//             *pum1 ^= arr[i];//5
 //         }
 //         else
 //         {
-//             *pum2 ^= arr[i];
+//             *pum2 ^= arr[i];//6
 //         }
 //     }
 // }
+
 // int main()
 // {
 //     int arr [] = {1,2,3,4,5,1,2,3,4,6};
