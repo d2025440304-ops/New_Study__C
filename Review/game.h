@@ -1,5 +1,4 @@
 #pragma once
-//此文件的函数是定义
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>

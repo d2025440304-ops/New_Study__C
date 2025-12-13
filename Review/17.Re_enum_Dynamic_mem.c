@@ -246,44 +246,46 @@
 //柔性数组基于结构体
 //放在最后一个定义，且不写数组元素个数
 
-struct S
-{
-    char c;
-    int i;
-    int arr[];//柔性数组
-};
-struct S
-{
-    char c;
-    int arr[0];//柔性数组
-};
-int main()
-{
+// struct S
+// {
+//     char c;
+//     int i;
+//     int arr[];//柔性数组
+// };
 
-    //含有柔性数组的在分配动态内存的时候是不包括柔性数组的，sizeof(struct S)
-    //sizeof(struct S)不包括柔性数组的大小
-    struct S *pf = (struct S *)malloc(sizeof(struct S)+5*sizeof(int));
-    if(pf == NULL)
-    {
-        perror("malloc");
-        return 1;
-    }
-    for(int i =0;i<5;i++)   
-    {
-        pf->arr[i] = i+1;
-    }
-    //调整空间
-    struct S *ps = (struct S*)realloc(pf,sizeof(struct S)+20*sizeof(int));
-    if(ps != NULL)
-    {
-        pf = ps;
-        for(int i = 0;i<20;i++)
-        {
-            pf->arr[i] = i+1;
-        }
-    }
-    //释放
-    free(pf);
-    pf = NULL;
-    return 0;
-}
+// struct S
+// {
+//     char c;
+//     int arr[0];//柔性数组
+// };
+
+// int main()
+// {
+//     //用柔性数组的时候要用结构体指针
+//     //sizeof(struct S)不包括柔性数组的大小
+//     //含有柔性数组的在分配动态内存的时候是不包括柔性数组的，sizeof(struct S)
+//     struct S *pf = (struct S *)malloc(sizeof(struct S)+5*sizeof(int));
+//     if(pf == NULL)
+//     {
+//         perror("malloc");
+//         return 1;
+//     }
+//     for(int i =0;i<5;i++)   
+//     {
+//         pf->arr[i] = i+1;
+//     }
+//     //调整空间
+//     struct S *ps = (struct S*)realloc(pf,sizeof(struct S)+20*sizeof(int));
+//     if(ps != NULL)
+//     {
+//         pf = ps;
+//         for(int i = 0;i<20;i++)
+//         {
+//             pf->arr[i] = i+1;
+//         }
+//     }
+//     //释放
+//     free(pf);
+//     pf = NULL;
+//     return 0;
+// }

@@ -20,22 +20,22 @@
 //}
 //
 
-//char* my_strcat(char* dest, const char* src)
-//{
-//	char* ret = dest;
-//	assert(dest && src);
-//	//1.找到目标空间中的\0
-//	while (*dest != '\0')
-//	{
-//		dest++;
-//	}
-//	//2.数据的拷贝
-//	while (*dest++ = *src++)
-//	{
-//		;
-//	}
-//	return ret;
-//}
+// char* my_strcat(char* dest, const char* src)
+// {
+// 	char* ret = dest;
+// 	assert(dest && src);
+// 	//1.找到目标空间中的\0
+// 	while (*dest != '\0')
+// 	{
+// 		dest++;
+// 	}
+// 	//2.数据的拷贝
+// 	while (*dest++ = *src++)
+// 	{
+// 		;
+// 	}
+// 	return ret;
+// }
 //
 //int main()
 //{

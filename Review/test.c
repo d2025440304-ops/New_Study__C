@@ -1,29 +1,29 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "game.h"
 
-//´ËÎÄ¼þµÄº¯ÊýÊÇµ÷ÓÃ£»µ÷ÓÃµÄÇ°ÌáÊÇÉùÃ÷»ò¶¨Òå£»ÉùÃ÷·ÅÔÚgame.hµÄÍ·ÎÄ¼þÖÐ£¬ÕâÑùÒÔÀ´¾Í¿ÉÒÔÏñprintf£¬scanfÒ»Ñùµ÷ÓÃËûÃÇ£»¶ø¶¨Òå·ÅÔÚtset.cµÄÔ´ÎÄ¼þÖÐ
-//ÉùÃ÷ºÍ¶¨Òå¶¼ÊÇÐÎÊ½²ÎÊý£¬ÐèÒªËµÃ÷º¯Êý·µ»ØÀàÐÍ£¬²ÎÊýÀàÐÍ£¨Êý×é£¬ÕûÐÎ£¬×Ö·ûÐÍµÈ£©£¬
-//µ÷ÓÃ²»ÐèÒªËµÃ÷º¯ÊýµÄ·µ»ØÀàÐÍ£¬Ò²²»ÐèÒªËµÃ÷²ÎÊýµÄÀàÐÍ£¬Ö»ÐèÒª¸ø³öÊµ²Î
+//æ­¤æ–‡ä»¶çš„å‡½æ•°æ˜¯è°ƒç”¨ï¼›è°ƒç”¨çš„å‰ææ˜¯å£°æ˜Žæˆ–å®šä¹‰ï¼›å£°æ˜Žæ”¾åœ¨game.hçš„å¤´æ–‡ä»¶ä¸­ï¼Œè¿™æ ·ä»¥æ¥å°±å¯ä»¥åƒprintfï¼Œscanfä¸€æ ·è°ƒç”¨ä»–ä»¬ï¼›è€Œå®šä¹‰æ”¾åœ¨tset.cçš„æºæ–‡ä»¶ä¸­
+//å£°æ˜Žå’Œå®šä¹‰éƒ½æ˜¯å½¢å¼å‚æ•°ï¼Œéœ€è¦è¯´æ˜Žå‡½æ•°è¿”å›žç±»åž‹ï¼Œå‚æ•°ç±»åž‹ï¼ˆæ•°ç»„ï¼Œæ•´å½¢ï¼Œå­—ç¬¦åž‹ç­‰ï¼‰ï¼Œ
+//è°ƒç”¨ä¸éœ€è¦è¯´æ˜Žå‡½æ•°çš„è¿”å›žç±»åž‹ï¼Œä¹Ÿä¸éœ€è¦è¯´æ˜Žå‚æ•°çš„ç±»åž‹ï¼Œåªéœ€è¦ç»™å‡ºå®žå‚
 void menu()
 {
 	printf("********1.paly********\n");
 	printf("********0.exit********\n");
-	printf("ÇëÑ¡Ôñ\n");
+	printf("è¯·é€‰æ‹©\n");
 }
 void game()
 {
 	char show[ROWS][CLOS];
 	char mine[ROWS][CLOS];
-	//º¯ÊýµÄµ÷ÓÃ
-	//³õÊ¼»¯ÆåÅÌ,½«Á½¸öÆåÅÌÓÃÍ¬Ò»¸öº¯Êý³õÊ¼»¯£¬²¢¶¨ÒåÒ»¸öset×Ö·û£¬¿ÉÒÔ¸ü·½±ãµÄ´«²Î¸øº¯Êý
-	 CHU(show,ROWS,CLOS,'*');//µ÷ÓÃº¯ÊýÊý×é´«²ÎÊ±£¬Êµ²ÎÖ»ÐèÒªÊäÈëÊý×éÃû£¬¶ø²»ÊÇÊý×éÖÐµÄÄ³¸öÔªËØ
+	//å‡½æ•°çš„è°ƒç”¨
+	//åˆå§‹åŒ–æ£‹ç›˜,å°†ä¸¤ä¸ªæ£‹ç›˜ç”¨åŒä¸€ä¸ªå‡½æ•°åˆå§‹åŒ–ï¼Œå¹¶å®šä¹‰ä¸€ä¸ªsetå­—ç¬¦ï¼Œå¯ä»¥æ›´æ–¹ä¾¿çš„ä¼ å‚ç»™å‡½æ•°
+	 CHU(show,ROWS,CLOS,'*');//è°ƒç”¨å‡½æ•°æ•°ç»„ä¼ å‚æ—¶ï¼Œå®žå‚åªéœ€è¦è¾“å…¥æ•°ç»„åï¼Œè€Œä¸æ˜¯æ•°ç»„ä¸­çš„æŸä¸ªå…ƒç´ 
 	 CHU(mine,ROWS,CLOS,'0');
-	//´òÓ¡ÆåÅÌ
+	//æ‰“å°æ£‹ç›˜
 	 print(show,ROW,CLO);
 	/* print(mine,ROW,CLO);*/
-	//×°Õ¨µ¯
+	//è£…ç‚¸å¼¹
 	 Set(mine,ROW,CLO);
-	 //ÕÒÖÜÎ§ÓÐ¼¸¸öÕ¨µ¯
+	 //æ‰¾å‘¨å›´æœ‰å‡ ä¸ªç‚¸å¼¹
 	 find(mine,show,ROW,CLO);
 }
 
@@ -41,10 +41,10 @@ int main()
 			game();
 			break;
 		case 0:
-			printf("ÍË³öÓÎÏ·\n");
+			printf("é€€å‡ºæ¸¸æˆ\n");
 			break;
 		default:
-			printf("ÊäÈë´íÎó£¬ÇëÖØÐÂÑ¡Ôñ£º\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼š\n");
 			break;
 		}
 	} while (choice);

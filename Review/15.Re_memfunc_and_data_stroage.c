@@ -44,6 +44,7 @@
 //     return 0;
 // }
 
+
 //memcpy不好对付有内存重叠的内容
 //int main()
 //{

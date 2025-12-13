@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "game.h"
-//´ËÎÄ¼þµÄº¯ÊýÊÇ¶¨Òåºó²»ÐèÒª¸ú·ÖºÅ
-void CHU(char board[ROWS][CLOS], int rows, int clos,char set)//boardÖ»ÊÇÒ»¸öÐÎ²Î£¬ÊÇºÍÊµ²Î Í¬ÑùµÄÊý×é£¬ÕâÀïÊÇÎªÁËÇø·ÖÃû×Ö¶ø×ö³öµÄ¸Ä±ä
+//æ­¤æ–‡ä»¶çš„å‡½æ•°æ˜¯å®šä¹‰åŽä¸éœ€è¦è·Ÿåˆ†å·
+void CHU(char board[ROWS][CLOS], int rows, int clos,char set)//boardåªæ˜¯ä¸€ä¸ªå½¢å‚ï¼Œæ˜¯å’Œå®žå‚ åŒæ ·çš„æ•°ç»„ï¼Œè¿™é‡Œæ˜¯ä¸ºäº†åŒºåˆ†åå­—è€Œåšå‡ºçš„æ”¹å˜
 {
 	for (int i = 0; i < rows; i++)
 	{
@@ -14,7 +14,7 @@ void CHU(char board[ROWS][CLOS], int rows, int clos,char set)//boardÖ»ÊÇÒ»¸öÐÎ²Î
 
 void print(char board[ROWS][CLOS], int row, int clo)
 {
-	printf("--------¿ªÊ¼É¨À×ÓÎÏ·-----------\n");
+	printf("--------å¼€å§‹æ‰«é›·æ¸¸æˆ-----------\n");
 	for (int i = 0; i <= row; i++)
 	{
 		printf("%d ", i);
@@ -25,7 +25,7 @@ void print(char board[ROWS][CLOS], int row, int clo)
 		printf("%d ", i);
 		for (int j = 1; j <= clo; j++)
 		{
-			printf("%c ",board[i][j]);//ÐÎÊ½²ÎÊý£¬ÐÎÊ½Êý×é£¬¿ÉÒÔÊÇÈÎºÎÊý×é
+			printf("%c ",board[i][j]);//å½¢å¼å‚æ•°ï¼Œå½¢å¼æ•°ç»„ï¼Œå¯ä»¥æ˜¯ä»»ä½•æ•°ç»„
 		}
 		printf("\n");
 	}
@@ -45,7 +45,7 @@ void Set(char board[ROWS][CLOS], int row, int clo)
 		}
 	}
 }
-//staticµÄ×÷ÓÃÊÇÈÃº¯ÊýµÄ×÷ÓÃÓò¾¡ÔÚ±¾Ô´ÎÄ¼þ£¬¶ø²»±»ÆäËûÎÄ¼þËùµ÷ÓÃ
+//staticçš„ä½œç”¨æ˜¯è®©å‡½æ•°çš„ä½œç”¨åŸŸå°½åœ¨æœ¬æºæ–‡ä»¶ï¼Œè€Œä¸è¢«å…¶ä»–æ–‡ä»¶æ‰€è°ƒç”¨
 static int num (char board[ROWS][CLOS], int x, int y)
 {
 	return (board[x - 1][y] + board[x - 1][y - 1] + board[x - 1][y + 1] + board[x][y - 1] + board[x][y + 1] + board[x + 1][y] + board[x + 1][y - 1] + board[x + 1][y + 1] - 8 * '0');
@@ -59,13 +59,13 @@ void find(char mine[ROWS][CLOS], char show[ROWS][CLOS], int row, int clo)
 	int win = 0;
 	while (win < row * clo- EZ)
 	{
-		printf("ÇëÊäÈëÄã²Â²âµÄ×ø±ê(×ø±êÖ®¼äÓÃ¿Õ¸ñ·Ö¿ª£©:>");
+		printf("è¯·è¾“å…¥ä½ çŒœæµ‹çš„åæ ‡(åæ ‡ä¹‹é—´ç”¨ç©ºæ ¼åˆ†å¼€ï¼‰:>");
 		scanf("%d %d", &x, &y);
 		if (x > 0 && x <= row && y > 0 && y <= clo)
 		{
 			if (mine[x][y] == '1')
 			{
-				printf("Äã±»Õ¨ËÀÁË\n");
+				printf("ä½ è¢«ç‚¸æ­»äº†\n");
 				print(mine, ROW, CLO);
 				break;
 			}
@@ -79,12 +79,12 @@ void find(char mine[ROWS][CLOS], char show[ROWS][CLOS], int row, int clo)
 		}
 		else
 		{
-			printf("×ø±ê·Ç·¨£¬ÖØÐÂÊäÈë\n");
+			printf("åæ ‡éžæ³•ï¼Œé‡æ–°è¾“å…¥\n");
 		}
 	}
 	if (win == row * clo - EZ)
 	{
-		printf("Í¨¹Ø£¬ÓÎÏ·½áÊø\n");
+		printf("é€šå…³ï¼Œæ¸¸æˆç»“æŸ\n");
 		print(mine, ROW, CLO);
 	}	
 }
