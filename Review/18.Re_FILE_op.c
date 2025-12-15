@@ -263,58 +263,62 @@
 // }
 
 
-//int main()
-//{
-//	FILE* pf = fopen("test.txt", "r");
-//	if (pf == NULL)
-//	{
-//		perror("fopen");
-//		return 1;
-//	}
-//	//读取
-//	int ch = 0;
-//	while ((ch = fgetc(pf)) != EOF)
-//	{
-//		printf("%c\n", ch);
-//	}
-//	//判断是什么原因导致读取结束的
-//	if (feof(pf))
-//	{
-//		printf("遇到文件末尾，读取正常结束\n");
-//	}
-//	else if (ferror(pf))
-//	{
-//		perror("fgetc");
-//	}
-//
-//	return 0;
-//}
+// int main()
+// {
+// 	FILE* pf = fopen("test.txt", "r");
+// 	if (pf == NULL)
+// 	{
+// 		perror("fopen");
+// 		return 1;
+// 	}
+// 	//读取
+// 	int ch = 0;
+// 	while ((ch = fgetc(pf)) != EOF)
+// 	{
+// 		printf("%c\n", ch);
+// 	}
+// 	//判断是什么原因导致读取结束的
+// 	if (feof(pf))//feof判断的是文件是否遇到文件末尾
+// 	{
+// 		printf("遇到文件末尾，读取正常结束\n");
+// 	}
+// 	else if (ferror(pf))
+// 	{
+// 		perror("fgetc");
+// 	}
+
+// 	return 0;
+// }
 
 
 //拷贝文件 text.txt ----> text.txt
-int main()
-{
-    FILE* pf = foepen("text.txt","r");
-    if(pf == NULL)
-    {
-        perror("fopen");
-        return 1;
-    }
-    FILE* pf1 = fopen("test.txt","w");
-    if(pf1 ==NULL)
-    {
-        perror("fopen");
-        return 1;
-    }
-    //读文件和写文件
-    int ch = 0;
-    while((ch=get(pf)) != EOF)
-    {
-        fputc(ch,fp1);
-    }
-    fclose(pf);
-    pf = NULL;
-    fclose(pf1);
-    pf1 = NULL;
-    return 0;
-}
+// int main()
+// {
+//     FILE* pf = fopen("text.txt","r");
+
+//     if(pf == NULL)
+//     {
+//         perror("fopen");
+//         return 1;
+//     }
+
+//     FILE* pf1 = fopen("test.txt","a");
+//     if(pf1 ==NULL)
+//     {
+//         perror("fopen");
+//         return 1;
+//     }
+
+//     //读文件和写文件
+//     int ch = 0;
+//     while((ch=fgetc(pf)) != EOF)
+//     {
+//         fputc(ch,pf1);
+//     }
+//     fclose(pf);
+//     pf = NULL;
+//     fclose(pf1);
+//     pf1 = NULL;
+//     return 0;
+// }
+
