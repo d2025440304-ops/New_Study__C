@@ -160,7 +160,11 @@
 // }
 
 
-//
+//printf,fprintf,sprintf
+//scanf,fscanf,sscanf
+//printf;写入到标准输出流屏幕上 fprintf;写入到从指定输出流  sprintf；将格式化数据转变成字符串中
+//scanf；从标准读入流键盘中读取 fscanf；从指定输入流中读取  sscanf；将字符串转变成格式化数据
+
 struct S
 {
     char name[20];
@@ -171,5 +175,16 @@ struct S
 int main()
 {
     char buf[200] = {0};
+    //格式化数据
+    struct S s = {"zzz",19,65.5f};
+    //将格式化数据转变成字符串，写入到字符串中
+    sprintf(buf,"%s %d %f",s.name,s.age,s.gpa);
+    printf("%s\n",buf);
+
+    //将字符串读取到格式化数据中
+    struct S t = {0};
+    sscanf(buf,"%s %d %f",t.name,t.age,t.gpa);
+    printf("%s %d %f\n",t.name,t.age,t.gpa);
+
     return 0;
 }
