@@ -165,26 +165,156 @@
 //printf;写入到标准输出流屏幕上 fprintf;写入到从指定输出流  sprintf；将格式化数据转变成字符串中
 //scanf；从标准读入流键盘中读取 fscanf；从指定输入流中读取  sscanf；将字符串转变成格式化数据
 
-struct S
-{
-    char name[20];
-    int age;
-    float gpa;
-};
+// struct S
+// {
+//     char name[20];
+//     int age;
+//     float gpa;
+// };
 
+// int main()
+// {
+//     char buf[200] = {0};
+//     //格式化数据
+//     struct S s = {"zzz",19,65.5f};
+//     //将格式化数据转变成字符串，写入到字符串中
+//     sprintf(buf,"%s %d %f",s.name,s.age,s.gpa);
+//     printf("%s\n",buf);
+
+//     //将字符串读取到格式化数据中
+//     struct S t = {0};
+//     sscanf(buf,"%s %d %f",t.name,t.age,t.gpa);
+//     printf("%s %d %f\n",t.name,t.age,t.gpa);
+
+//     return 0;
+// }
+
+
+//以二进制写入和读取文件
+
+// int main()
+// {
+//     int arr[] = {1,2,3,4,5};
+//     //打开文件
+//     FILE *pf = fopen("text.txt","wb");
+//     if(pf == NULL)
+//     {
+//         perror("fopen");
+//         return 1;
+//     }
+//     size_t sz =sizeof(arr)/sizeof(arr[0]);
+//     // size_t fwrite ( const void * ptr, size_t size, size_t count, FILE * stream );
+//     //第一个为指针，第二个为元素大小，第三个为元素个数，第四个为指针
+//     fwrite(arr,sizeof(arr[0]),sz,pf);
+//     //存到文本是以二进制的形式，小段字节序存放，低位放到低地址
+//     fclose(pf);
+//     pf == NULL;
+//     return 0;
+// }
+
+// int main()
+// {
+//     int str[8] = {0};
+//     //打开文件                  wb 写二进制 rb 读二进制
+//     FILE *pf = fopen("text.txt","rb");
+//     if(pf == NULL)
+//     {
+//         perror("fopen");
+//         return 1;
+//     }
+//     // size_t fread ( const void * ptr, size_t size, size_t count, FILE * stream );
+//     //第一个为指针，第二个为元素大小，第三个为元素个数，第四个为指针
+//     fread(str,sizeof(int),5,pf);
+//     for(int i = 0;i<5;i++)
+//     {
+//         printf("%d ",str[i]);
+//     }
+//     int i = 0;
+//     while(fread(&str[i],sizeof(int),8,pf))
+//     {
+//         printf("%d ",str[i]);
+//         i++;
+//     }
+//     fclose(pf);
+//     pf == NULL;
+//     return 0;
+// }
+
+// int main()
+// {
+//     FILE*pf = fopen("text.txt","r");
+//     if(pf == NULL)
+//     {
+//         perror("fopen");
+//         return 1;
+//     }
+//     // int ch = fgetc(pf);
+//     // printf("%c\n",ch);
+//     //int fseek ( FILE * stream, long int offset, int origin );
+//     // fseek(pf,4,SEEK_CUR);
+//     fseek(pf,5,SEEK_SET);
+//     int ch = fgetc(pf);
+//     printf("%c\n",ch);
+
+//     fclose(pf);
+//     pf == NULL;
+
+//     return 0;
+// }
+
+
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	//读取
+//	int ch = 0;
+//	while ((ch = fgetc(pf)) != EOF)
+//	{
+//		printf("%c\n", ch);
+//	}
+//	//判断是什么原因导致读取结束的
+//	if (feof(pf))
+//	{
+//		printf("遇到文件末尾，读取正常结束\n");
+//	}
+//	else if (ferror(pf))
+//	{
+//		perror("fgetc");
+//	}
+//
+//	return 0;
+//}
+
+
+//拷贝文件 text.txt ----> text.txt
 int main()
 {
-    char buf[200] = {0};
-    //格式化数据
-    struct S s = {"zzz",19,65.5f};
-    //将格式化数据转变成字符串，写入到字符串中
-    sprintf(buf,"%s %d %f",s.name,s.age,s.gpa);
-    printf("%s\n",buf);
-
-    //将字符串读取到格式化数据中
-    struct S t = {0};
-    sscanf(buf,"%s %d %f",t.name,t.age,t.gpa);
-    printf("%s %d %f\n",t.name,t.age,t.gpa);
-
+    FILE* pf = foepen("text.txt","r");
+    if(pf == NULL)
+    {
+        perror("fopen");
+        return 1;
+    }
+    FILE* pf1 = fopen("test.txt","w");
+    if(pf1 ==NULL)
+    {
+        perror("fopen");
+        return 1;
+    }
+    //读文件和写文件
+    int ch = 0;
+    while((ch=get(pf)) != EOF)
+    {
+        fputc(ch,fp1);
+    }
+    fclose(pf);
+    pf = NULL;
+    fclose(pf1);
+    pf1 = NULL;
     return 0;
 }
