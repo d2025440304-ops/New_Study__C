@@ -291,34 +291,34 @@
 // }
 
 
-//拷贝文件 text.txt ----> text.txt
-// int main()
-// {
-//     FILE* pf = fopen("text.txt","r");
+// 拷贝文件 text.txt ----> text.txt
+int main()
+{
+    FILE* pf = fopen("text.txt","r");
 
-//     if(pf == NULL)
-//     {
-//         perror("fopen");
-//         return 1;
-//     }
+    if(pf == NULL)
+    {
+        perror("fopen");
+        return 1;
+    }
 
-//     FILE* pf1 = fopen("test.txt","a");
-//     if(pf1 ==NULL)
-//     {
-//         perror("fopen");
-//         return 1;
-//     }
+    FILE* pf1 = fopen("test.txt","a");
+    if(pf1 ==NULL)
+    {
+        perror("fopen");
+        return 1;
+    }
 
-//     //读文件和写文件
-//     int ch = 0;
-//     while((ch=fgetc(pf)) != EOF)
-//     {
-//         fputc(ch,pf1);
-//     }
-//     fclose(pf);
-//     pf = NULL;
-//     fclose(pf1);
-//     pf1 = NULL;
-//     return 0;
-// }
+    //读文件和写文件
+    int ch = 0;
+    while((ch=fgetc(pf)) != EOF)
+    {
+        fputc(ch,pf1);
+    }
+    fclose(pf);
+    pf = NULL;
+    fclose(pf1);
+    pf1 = NULL;
+    return 0;
+}
 
