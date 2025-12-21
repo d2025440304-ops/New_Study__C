@@ -41,7 +41,7 @@
 // 	MUL,//3
 // 	DIV//4
 // };
-// int manin()
+// int main()
 // {
 //     int input = 0;
 //     printf("请选择>");

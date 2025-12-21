@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的大成通讯录</title>
+    <style>
+        body { font-family: sans-serif; background: #1e1e1e; color: white; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: #2d2d2d; padding: 20px; border-radius: 10px; }
+        input { padding: 8px; margin: 5px 0; width: 90%; }
+        button { background: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        th, td { border: 1px solid #444; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📱 通讯录项目 (Web 模拟版)</h2>
+        <input type="text" id="name" placeholder="姓名">
+        <input type="text" id="tel" placeholder="电话">
+        <button onclick="addContact()">添加联系人</button>
+
+        <table id="contactTable">
+            <tr><th>姓名</th><th>电话</th><th>操作</th></tr>
+        </table>
+    </div>
+
+    <script>
+        // 这就是你的“顺序表” (JavaScript 里的数组)
+        let contacts = []; 
+
+        function addContact() {
+            let name = document.getElementById('name').value;
+            let tel = document.getElementById('tel').value;
+            
+            if(name && tel) {
+                // 这里的 push 相当于你的 SLPushBack
+                contacts.push({ name, tel }); 
+                showContacts();
+            }
+        }
+
+        function showContacts() {
+            let table = document.getElementById('contactTable');
+            // 清理旧内容，重新渲染 (相当于你的 Contact_Show)
+            table.innerHTML = '<tr><th>姓名</th><th>电话</th><th>操作</th></tr>';
+            contacts.forEach((item, index) => {
+                table.innerHTML += `<tr>
+                    <td>${item.name}</td>
+                    <td>${item.tel}</td>
+                    <td><button onclick="delContact(${index})">删除</button></td>
+                </tr>`;
+            });
+        }
+
+        function delContact(index) {
+            // 这里的 splice 相当于你的 SLErase
+            contacts.splice(index, 1); 
+            showContacts();
+        }
+    </script>
+</body>
+</html>
