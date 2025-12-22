@@ -63,29 +63,29 @@
 //}
 
 //所以用memmove,memmove 可以用于有同一块内存的数据
-// void * my_memmove(void *dest,const void *src,size_t num)
-// {
-//     //前前后后，当dest在src前面时，从前往后换，当dest在src后面时，从后往前
-//     void * ret =dest;
-//     assert(dest && src);
-//     if((char *)dest < (char *)src)
-//     {
-//         while(num--)
-//         {
-//             *(char *)dest = *(char *)src;
-//             src = (char *)src + 1;
-//             dest = (char *)dest + 1;
-//         }    
-//     }
-//     else 
-//     {
-//         while(num--)
-//         {
-//             *((char *)dest+num) = *((char *)src + num);
-//         }
-//     }
-//     return ret;
-// }
+void * my_memmove(void *dest,const void *src,size_t num)
+{
+    //前前后后，当dest在src前面时，从前往后换，当dest在src后面时，从后往前
+    void * ret =dest;
+    assert(dest && src);
+    if((char *)dest < (char *)src)
+    {
+        while(num--)
+        {
+            *(char *)dest = *(char *)src;
+            src = (char *)src + 1;
+            dest = (char *)dest + 1;
+        }    
+    }
+    else 
+    {
+        while(num--)
+        {
+            *((char *)dest+num) = *((char *)src + num);
+        }
+    }
+    return ret;
+}
 // int main()
 // {
 //     int arr[] = {1,2,3,4,5,6,7,8};
@@ -108,19 +108,19 @@
 //     return 0;
 // }
 
-//在定义整形时避免用memset
-// int main()
-// {
-// 	int arr[5] = { 1,2,3,4,5 };
-// 	memset(arr, 2, 20);//以字节为单位设置的
-// 	int i = 0;
-// 	for (i = 0; i < 5; i++)
-// 	{
-// 		printf("%d ", arr[i]);
-// 	}
+// 在定义整形时避免用memset
+int main()
+{
+	int arr[5] = { 1,2,3,4,5 };
+	memset(arr, 2, 20);//以字节为单位设置的
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d ", arr[i]);
+	}
 
-// 	return 0;
-// }
+	return 0;
+}
 
 
 // int main()
