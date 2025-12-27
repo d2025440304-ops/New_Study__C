@@ -278,6 +278,7 @@ int main()
 //     printf("%zd\n",sizeof(oun));
 //     return 0;
 // }
+
 struct gift_list
 {
     int stock_number;//库存量

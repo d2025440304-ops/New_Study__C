@@ -100,6 +100,8 @@
 
 
 //Reveiew
+
+// 1 3 0 7 0 4
 #include <stdio.h>
 typedef long long LL;
 void zeros_end(LL a[],int n)
