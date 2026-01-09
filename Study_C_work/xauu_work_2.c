@@ -512,47 +512,45 @@
 
 
 // 717
-#include <stdio.h>
+// #include <stdio.h>
 
-#define INITIAL_SIZE 9
-#define FINAL_SIZE 10
+// #define INITIAL_SIZE 9
+// #define FINAL_SIZE 10
 
-int main() {
-    // 初始化数组 (长度为10，但只初始化前9个)
-    int a[FINAL_SIZE] = {3, 5, 7, 9, 12, 15, 18, 21, 25};
-    int num;
-    int insert_pos = INITIAL_SIZE; // 默认插入到最后
+// int main() {
+//     // 初始化数组 (长度为10，但只初始化前9个)
+//     int a[FINAL_SIZE] = {3, 5, 7, 9, 12, 15, 18, 21, 25};
+//     int num;
+//     int insert_pos = INITIAL_SIZE; // 默认插入到最后
 
-    // 输出原数组 (前9个元素)
-    for (int i = 0; i < INITIAL_SIZE; i++) {
-        printf("%d ", a[i]);
-    }
-    printf("\n");
+//     // 输出原数组 (前9个元素)
+//     for (int i = 0; i < INITIAL_SIZE; i++) {
+//         printf("%d ", a[i]);
+//     }
+//     printf("\n");
 
-    // 输入待插入的数
-    scanf("%d", &num);
+//     // 输入待插入的数
+//     scanf("%d", &num);
 
-    // 寻找插入位置
-    for (int i = 0; i < INITIAL_SIZE; i++) {
-        if (num < a[i]) {
-            insert_pos = i;
-            break;
-        }
-    }
+//     // 寻找插入位置
+//     for (int i = 0; i < INITIAL_SIZE; i++) {
+//         if (num < a[i]) {
+//             insert_pos = i;
+//             break;
+//         }
+//     }
 
-    // 将插入位置及之后的元素向后移动一位
-    for (int i = FINAL_SIZE - 1; i > insert_pos; i--) {
-        a[i] = a[i - 1];
-    }
+//     // 将插入位置及之后的元素向后移动一位
+//     for (int i = FINAL_SIZE - 1; i > insert_pos; i--) {
+//         a[i] = a[i - 1];
+//     }
+//     // 在找到的位置插入新元素
+//     a[insert_pos] = num;
+//     // 输出插入后的数组
+//     for (int i = 0; i < FINAL_SIZE; i++) {
+//         printf("%d ", a[i]);
+//     }
+//     printf("\n");
+//     return 0;
+// }
 
-    // 在找到的位置插入新元素
-    a[insert_pos] = num;
-
-    // 输出插入后的数组
-    for (int i = 0; i < FINAL_SIZE; i++) {
-        printf("%d ", a[i]);
-    }
-    printf("\n");
-
-    return 0;
-}
