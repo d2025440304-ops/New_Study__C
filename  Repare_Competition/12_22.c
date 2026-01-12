@@ -27,6 +27,7 @@
  *     struct ListNode *next;
  * };
  */
+
  typedef struct ListNode ListNode;
 struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) 
 {
