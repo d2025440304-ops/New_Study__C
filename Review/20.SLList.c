@@ -51,5 +51,20 @@ void SLList_Push_Back(SLTNode ** pphead,SLDataType x)
 void SLTPop_Back(SLTNode **pphead)
 {
     assert(pphead && *pphead);
-
+    if((*pphead)->next == NULL)
+    {
+        free(*pphead);
+        *pphead = NULL;
+    }else{
+        SLTNode * ptail = *pphead;
+        SLTNode * prev  = *pphead;
+        while(ptail->next)
+        {
+        prev = ptail;
+        ptail = ptail->next;
+        } 
+    free(ptail);
+    ptail = NULL;
+    prev->next = NULL;
+    }
 } 
