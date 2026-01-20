@@ -284,6 +284,7 @@ struct gift_list
     int stock_number;//库存量
     double price;//定价
     int item_type;//商品类型
+    //联合体成员共用一块内存，可以方便节省内存，但是只能在使用时只能使用一个，一个改变其他的也改变
     union 
     {
          struct 
