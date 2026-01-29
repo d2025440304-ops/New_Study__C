@@ -68,3 +68,16 @@ void SLTPop_Back(SLTNode **pphead)
     prev->next = NULL;
     }
 } 
+#include <stdio.h>
+void swap(int * p, int *k)
+{
+    int x = *p;
+    *k = x;
+    *p = *k;
+}
+int main()
+{
+    int a,b;
+    swap(&a,&b);
+    return 0;
+}
