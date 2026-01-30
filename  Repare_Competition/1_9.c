@@ -6,6 +6,8 @@
  *     struct ListNode *next;
  * };
  */
+//判断一个链表是否带环
+
  typedef struct ListNode ListNode;
 bool hasCycle(struct ListNode *head) {
     ListNode * slow  = head, * fast = head;

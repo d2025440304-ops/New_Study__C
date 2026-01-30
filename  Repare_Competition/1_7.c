@@ -1,3 +1,4 @@
+//判断一个链表是否为回文链表
 typedef struct Listnode Listnode;
 Listnode * listmiddle(Listnode * head)
 {
