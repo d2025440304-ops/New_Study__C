@@ -1,4 +1,6 @@
 //判断一个链表是否为回文链表
+//例如 1 2 3 4 3 2 1
+//逆置到中点之前的，然后再从一开始和中点之后的进行比较，如果相同，那就是回文结构
 typedef struct Listnode Listnode;
 Listnode * listmiddle(Listnode * head)
 {
